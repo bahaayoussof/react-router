@@ -27,7 +27,7 @@ import EventDetailPage, {
   loader as eventDetailLoader,
 } from "./pages/EventDetail";
 import EditEventPage from "./pages/EditEvent";
-import NewEventPage from "./pages/NewEvent";
+import NewEventPage, { action as newEventAction } from "./pages/NewEvent";
 import RootLayout from "./pages/RootLayout";
 import EventsLayout from "./pages/EventsLayout";
 import ErrorPage from "./pages/Error";
@@ -55,10 +55,13 @@ function App() {
               loader: eventDetailLoader,
               children: [
                 { index: true, element: <EventDetailPage /> },
-                { path: "edit", element: <EditEventPage /> },
+                {
+                  path: "edit",
+                  element: <EditEventPage />,
+                },
               ],
             },
-            { path: "new", element: <NewEventPage /> },
+            { path: "new", element: <NewEventPage />, action: newEventAction },
           ],
         },
       ],

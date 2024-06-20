@@ -1,6 +1,13 @@
 {
   "events": [
     {
+      "title": "test",
+      "image": "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?q=80&w=3000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "date": "2024-06-20",
+      "description": "test",
+      "id": "bd0cc9cf-2afa-46c2-b8e4-14c89a769b46.jpg"
+    },
+    {
       "id": "e1",
       "title": "A dummy event",
       "date": "2023-02-22",
