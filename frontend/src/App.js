@@ -27,7 +27,7 @@ import EventDetailPage, {
   loader as eventDetailLoader,
   action as eventDetailAction,
 } from "./pages/EventDetail";
-import EditEventPage from "./pages/EditEvent";
+import EditEventPage, { action as editEventAction } from "./pages/EditEvent";
 import NewEventPage, { action as newEventAction } from "./pages/NewEvent";
 import RootLayout from "./pages/RootLayout";
 import EventsLayout from "./pages/EventsLayout";
@@ -63,6 +63,7 @@ function App() {
                 {
                   path: "edit",
                   element: <EditEventPage />,
+                  action: editEventAction,
                 },
               ],
             },
