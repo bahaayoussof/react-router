@@ -17,7 +17,6 @@ export async function action({ request, params }) {
     date: data.get("date"),
     description: data.get("description"),
   };
-  console.log("🚀 ~ action ~ eventData:", eventData);
 
   const response = await fetch("http://localhost:8080/events", {
     method: "POST",
@@ -26,6 +25,10 @@ export async function action({ request, params }) {
     },
     body: JSON.stringify(eventData),
   });
+
+  if (response.status === 422) {
+    return response;
+  }
 
   if (!response.ok) {
     throw json({ message: "Failed to create event" }, { status: 500 });
