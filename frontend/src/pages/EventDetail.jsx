@@ -1,9 +1,9 @@
 import React from "react";
-import { useLoaderData, json } from "react-router-dom";
+import { json, useRouteLoaderData } from "react-router-dom";
 import EventItem from "../components/EventItem";
 
 const EventDetailPage = () => {
-  const data = useLoaderData();
+  const data = useRouteLoaderData("event-detail");
 
   return <EventItem event={data.event} />;
 };
@@ -11,7 +11,6 @@ const EventDetailPage = () => {
 export default EventDetailPage;
 
 export async function loader({ request, params }) {
-  console.log("🚀 ~ loader ~ request:", request);
   const response = await fetch(
     `http://localhost:8080/events/${params.eventId}`
   );
